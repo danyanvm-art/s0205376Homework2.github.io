@@ -1,65 +1,62 @@
-/* Цвет фона всей страницы */
+/* Общие настройки страницы */
 body {
-    background-color: #f4f4f4;
-    color: #333;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    min-width: 960px; /* Чтобы не сжималось меньше 960px (без адаптивности) */
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
 }
 
-/* Шапка сайта */
+/* --- Шапка (Header) --- */
 header {
-    background-color: #87CEEB; /* Светло-голубой цвет */
-    padding: 15px 20px;
-    border-bottom: 3px solid #0066cc;
+    width: 100%;
+    background-color: #87CEEB;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Логотип и название в шапке */
-.logo-and-title {
-    display: inline-block;
+/* Контейнер для логотипа и названия */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-.circle-logo {
+/* Стилизация круга (логотипа) */
+.logo-circle {
     width: 50px;
     height: 50px;
     border: 2px solid #000;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #fff;
-    display: inline-block;
-    vertical-align: middle;
 }
 
-.site-name {
+.site-title {
     font-size: 24px;
     font-weight: bold;
-    color: #000;
-    margin-left: 15px;
-    vertical-align: middle;
+    color: #333;
 }
 
-/* Меню навигации */
-nav {
-    float: right; /* Прижимаем меню вправо */
-    vertical-align: middle;
-}
-
+/* --- Навигация (Nav) --- */
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-nav li {
-    display: inline; /* Делаем пункты меню в одну строку */
-    margin-left: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #000;
+    color: #333;
     font-weight: bold;
     padding: 5px 10px;
+    border-radius: 4px;
 }
 
 nav a:hover {
@@ -67,38 +64,40 @@ nav a:hover {
     color: #0066cc;
 }
 
-/* Основной контент */
+/* --- Основной контент (Main) --- */
 main {
     max-width: 960px;
-    margin: 20px auto; /* Центрируем блок по горизонтали */
+    margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
-    min-height: 600px;
+    min-height: calc(100vh - 140px);
 }
 
-/* Подвал сайта */
+/* --- Подвал (Footer) --- */
 footer {
+    width: 100%;
     background-color: #87CEEB;
     padding: 20px;
     text-align: center;
-    color: #000;
-    clear: both; /* Важно: сбрасывает обтекание от меню */
+    color: #333;
+    margin-top: auto;
 }
 
-/* Таблица */
+/* --- Стили для Таблицы --- */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 th, td {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 12px;
     text-align: left;
 }
 
-/* Чередование цветов строк в таблице */
+/* Чередование цветов строк (четные/нечетные) */
 tbody tr:nth-child(odd) {
     background-color: #e0f7fa;
 }
@@ -107,29 +106,10 @@ tbody tr:nth-child(even) {
     background-color: #ffffff;
 }
 
+/* Заголовок таблицы */
 thead th {
     background-color: #0066cc;
     color: white;
-}
-
-/* Имитация ссылки (просто текст, похожий на ссылку) */
-.fake-link {
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-/* Отступы для формы */
-form p {
-    margin: 10px 0;
-}
-
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="date"],
-textarea,
-select {
-    padding: 5px;
-    border: 1px solid #ccc;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
