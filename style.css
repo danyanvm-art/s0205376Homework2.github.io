@@ -1,115 +1,97 @@
-/* Общие настройки страницы */
+/* Глобальные настройки */
 body {
-    margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-}
-
-/* --- Шапка (Header) --- */
-header {
-    width: 100%;
-    background-color: #87CEEB;
-    padding: 20px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* Контейнер для логотипа и названия */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-/* Стилизация круга (логотипа) */
-.logo-circle {
-    width: 50px;
-    height: 50px;
-    border: 2px solid #000;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-}
-
-.site-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-}
-
-/* --- Навигация (Nav) --- */
-nav ul {
-    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    gap: 20px;
+    /* Фиксированная ширина контента, чтобы на больших экранах не растягивалось бесконечно */
+    max-width: 1200px; 
+    margin: 0 auto; /* Центрирование всего сайта */
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 5px 10px;
-    border-radius: 4px;
+/* Ссылки */
+a {
+    color: #0000EE;
+    text-decoration: underline;
 }
 
-nav a:hover {
-    background-color: #fff;
-    color: #0066cc;
+a:hover {
+    color: #FF0000;
 }
 
-/* --- Основной контент (Main) --- */
-main {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    min-height: calc(100vh - 140px);
+/* Имитация ссылки (просто текст, похожий на ссылку) */
+.fake-link {
+    color: #0000EE;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
-/* --- Подвал (Footer) --- */
-footer {
-    width: 100%;
-    background-color: #87CEEB;
-    padding: 20px;
-    text-align: center;
-    color: #333;
-    margin-top: auto;
-}
-
-/* --- Стили для Таблицы --- */
+/* Таблица */
 table {
-    width: 100%;
+    width: 100%; /* Таблица всегда на всю ширину контейнера */
     border-collapse: collapse;
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
 }
 
 th, td {
-    border: 1px solid #ccc;
-    padding: 12px;
+    border: 1px solid #000;
+    padding: 8px;
     text-align: left;
 }
 
-/* Чередование цветов строк (четные/нечетные) */
-tbody tr:nth-child(odd) {
-    background-color: #e0f7fa;
+th {
+    background-color: #f2f2f2;
 }
 
-tbody tr:nth-child(even) {
+/* Чередование цветов строк (как требовалось в задании) */
+tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
 
-/* Заголовок таблицы */
-thead th {
-    background-color: #0066cc;
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Форма */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
     color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Подвал */
+footer {
+    background-color: #87CEEB;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
 }
