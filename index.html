@@ -2,107 +2,84 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Задание 2: Макет сайта</title>
-    <!-- Подключение внешнего CSS файла -->
+    <title>Задание 2: Без адаптации</title>
+    <!-- Подключаем стили -->
     <link rel="stylesheet" href="style.css">
+    <!-- ВАЖНО: Эта строка запрещает браузеру на телефоне пытаться "подогнать" сайт под экран.
+         Сайт будет выглядеть как крошечный компьютер. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>
 <body>
 
-    <!-- Шапка сайта (Header) -->
-    <header>
-        <div class="logo-container">
-            <div class="logo-circle"></div>
-            <span class="site-title">Название сайта</span>
+    <!-- Шапка (Header) -->
+    <!-- Здесь НЕТ flex. Используем float и inline-block для жесткой фиксации -->
+    <header style="background-color: #87CEEB; padding: 15px; box-sizing: border-box;">
+        <div style="display: inline-block; vertical-align: middle;">
+            <div style="width: 50px; height: 50px; border: 2px solid #000; border-radius: 50%; background: #fff; display: inline-block; vertical-align: middle;"></div>
+            <span style="font-size: 24px; font-weight: bold; color: #000; margin-left: 15px; vertical-align: middle;">Название сайта</span>
+        </div>
+
+        <div style="display: inline-block; float: right; vertical-align: middle;">
+            <a href="#" style="color: #000; text-decoration: none; font-weight: bold; margin-left: 20px;">Меню 1</a>
+            <a href="#" style="color: #000; text-decoration: none; font-weight: bold; margin-left: 20px;">Меню 2</a>
+            <a href="#" style="color: #000; text-decoration: none; font-weight: bold; margin-left: 20px;">Меню 3</a>
         </div>
         
-        <!-- Меню навигации (Nav) -->
-        <nav>
-            <ul>
-                <li><a href="#">Ссылка меню 1</a></li>
-                <li><a href="#">Ссылка меню 2</a></li>
-                <li><a href="#">Ссылка меню 3</a></li>
-            </ul>
-        </nav>
+        <!-- Очистка float, чтобы header не схлопнулся -->
+        <div style="clear: both;"></div>
     </header>
 
-    <!-- Основной контент (Main) -->
-    <main>
+    <!-- Основной контент -->
+    <main style="padding: 20px;">
         <h1>Список ссылок (база)</h1>
         <ul>
             <li><a href="http://kubsu.ru/">1) Ссылка на kubsu.ru (http)</a></li>
             <li><a href="https://kubsu.ru/">2) Ссылка на kubsu.ru (https)</a></li>
-
             <li>
                 3) Ссылка-картинка:
                 <br>
-                <!-- Если у вас нет файла photohtml2.jpg, замените src на заглушку или удалите этот блок -->
+                <!-- Если картинки нет, будет просто рамка -->
                 <a href="https://kubsu.ru/">
-                    <img src="photohtml2.jpg" alt="Лого" width="50" height="50">
+                    <img src="photohtml2.jpg" alt="Логотип" width="50" height="50" style="border: 1px solid #ccc;">
                 </a>
             </li>
-
             <li><a href="about.html">4) Ссылка на внутреннюю страницу (about.html)</a></li>
-            <li><a href="fff.html">5) Ссылка на главную (index.html)</a></li>
-
-            <li><a href="#contacts">6) Ссылка на блок "Контакты" на этой странице</a></li>
+            <li><a href="index.html">5) Ссылка на главную (index.html)</a></li>
+            <li><a href="#contacts">6) Ссылка на блок "Контакты"</a></li>
             <li>
-                7) Ссылка с тремя параметрами в URL:
+                7) Ссылка с параметрами:
                 <br>
-                <a href="result.html?name=Ivan&age=20&city=Krasnodar" target="_blank">Ссылка с тремя параметрами</a>
+                <a href="result.html?name=Ivan&age=20" target="_blank">Ссылка с параметрами</a>
             </li>
+            <li><a href="contacts.html">8) Ссылка в текущей папке</a></li>
+            <li><a href="about/info.html">9) Ссылка в папке about</a></li>
             <li>
-                8) Ссылка с параметром id в URL:
-                <br>
-                <a href="result.html?id=12345" target="_blank">Ссылка с параметром id</a>
-            </li>
-
-            <li><a href="contacts.html">9) Ссылка на файл в текущей папке</a></li>
-            <li><a href="about/info.html">10) Ссылка в папке about</a></li>
-            <li><a href="../page.html">11) Ссылка уровнем выше (заглушка)</a></li>
-            <li><a href="../../pagemain.html">12) Ссылка двумя уровнями выше (заглушка)</a></li>
-
-            <li>
-                13) Контекстная ссылка:
+                10) Контекстная ссылка:
                 <p>Зайдите на <a href="https://kubsu.ru/">сайт университета</a>, чтобы узнать расписание.</p>
             </li>
             <li>
-                14) Ссылка на фрагмент страницы стороннего сайта:
+                11) Карта ссылок (map):
                 <br>
-                <a href="https://en.wikipedia.org/wiki/Key_Glock#:~:text=known%20professionally%20as%20Key%20Glock%2C%20is%20an%20American%20rapper" target="_blank">
-                    Перейти к фрагменту о Key Glock 
-                </a>
-            </li>
-            <li>
-                15) Ссылки из прямоугольных и круглых областей картинки (HTML-тег map):
-                <br>
-                <!-- Если у вас нет файла photohtml1.jpg, картинка не отобразится, но код валиден -->
-                <img src="photohtml1.jpg" usemap="#image-map" alt="Карта ссылок" width="400" height="200">
-                
-                <map name="image-map">
-                    <area shape="rect" coords="0,0,200,200" href="https://kubsu.ru" target="_blank" alt="Прямоугольник">
-                    <area shape="circle" coords="300,100,60" href="https://yandex.ru" target="_blank" alt="Круг">
+                <img src="photohtml1.jpg" usemap="#site-map" alt="Карта" width="400" height="200" style="border: 1px solid #ccc;">
+                <map name="site-map">
+                    <area shape="rect" coords="0,0,200,200" href="https://kubsu.ru" alt="Прямоугольник">
+                    <area shape="circle" coords="300,100,60" href="https://google.com" alt="Круг">
                 </map>
             </li>
-            <li><a href="" onclick="return false;">16) Пустая ссылка</a></li>
-            <li>17) Имитация ссылки (просто текст): <span style="color: blue; text-decoration: underline;">Нажмите сюда</span></li>
-
-            <li><a href="https://kubsu.ru/" rel="nofollow">18) Ссылка с запретом для поисковиков</a></li>
+            <li><a href="#" onclick="return false;">12) Пустая ссылка</a></li>
+            <li>13) Имитация ссылки: <span class="fake-link">Нажмите сюда</span></li>
+            <li><a href="https://kubsu.ru/" rel="nofollow">14) Ссылка с запретом для поисковиков</a></li>
             <li>
-                19. Страница с запретом индексации поисковиками:
-                <br>
-                <a href="result.html">Перейти на страницу с параметрами (noindex)</a>
-            </li>
-            <li>
-                20) Нумерованный список:
+                15) Нумерованный список:
                 <ol>
-                    <li><a href="https://kubsu.ru/" title="Главная КубГУ">КубГУ</a></li>
-                    <li><a href="https://google.com/" title="Поиск">Google</a></li>
+                    <li><a href="https://kubsu.ru/">КубГУ</a></li>
+                    <li><a href="https://google.com/">Google</a></li>
                 </ol>
             </li>
             <li>
-                21) Ссылка на файл на сервере FTP с авторизацией:
+                16) FTP ссылка:
                 <br>
-                <a href="ftp://login:password@ftp.example.com/file.txt" target="_blank">Скачать файл с FTP-сервера (с авторизацией)</a>
+                <a href="ftp://user:pass@ftp.example.com/file.txt" target="_blank">Скачать файл с FTP</a>
             </li>
         </ul>
 
@@ -112,20 +89,19 @@
 
         <h2>Форма (база)</h2>
         <form action="/save" method="post">
-            
             <p>
                 <label>1) ФИО: </label>
-                <input type="text" name="fio" placeholder="Иванов И.И.">
+                <input type="text" name="fio" placeholder="Иванов И.И." style="width: 300px;">
             </p>
 
             <p>
                 <label>2) Телефон: </label>
-                <input type="tel" name="phone" placeholder="+7 (999) 000-00-00">
+                <input type="tel" name="phone" placeholder="+7 (999) 000-00-00" style="width: 300px;">
             </p>
 
             <p>
                 <label>3) E-mail: </label>
-                <input type="email" name="email" placeholder="name@mail.ru">
+                <input type="email" name="email" placeholder="name@mail.ru" style="width: 300px;">
             </p>
 
             <p>
@@ -150,12 +126,10 @@
                 <input type="checkbox" name="lang" value="js"> JavaScript
             </p>
 
-
-
             <p>
                 <label>7) Биография: </label>
                 <br>
-                <textarea name="bio" rows="4" cols="30" placeholder="О себе..."></textarea>
+                <textarea name="bio" rows="4" cols="40" placeholder="О себе..."></textarea>
             </p>
 
             <p>
@@ -168,9 +142,8 @@
             </p>
         </form>
 
-        <!-- ТАБЛИЦА (Новое требование) -->
         <h2>Таблица данных</h2>
-        <table>
+        <table border="1" style="border-collapse: collapse;">
             <thead>
                 <tr>
                     <th>Колонка 1</th>
@@ -180,52 +153,49 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Строка 1: объединенные ячейки -->
                 <tr>
-                    <td colspan="2">Объединенная ячейка (строка 1)</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
+                    <td>Ячейка 1-1</td>
+                    <td>Ячейка 1-2</td>
+                    <td>Ячейка 1-3</td>
+                    <td>Ячейка 1-4</td>
                 </tr>
-                <!-- Строка 2 -->
                 <tr>
-                    <td>Данные</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
+                    <td>Ячейка 2-1</td>
+                    <td>Ячейка 2-2</td>
+                    <td>Ячейка 2-3</td>
+                    <td>Ячейка 2-4</td>
                 </tr>
-                <!-- Строка 3: объединенные ячейки -->
                 <tr>
-                    <td colspan="3">Объединенная ячейка (строка 3)</td>
-                    <td>Данные</td>
+                    <td>Ячейка 3-1</td>
+                    <td>Ячейка 3-2</td>
+                    <td>Ячейка 3-3</td>
+                    <td>Ячейка 3-4</td>
                 </tr>
-                <!-- Строка 4 -->
                 <tr>
-                    <td>Данные</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
+                    <td>Ячейка 4-1</td>
+                    <td>Ячейка 4-2</td>
+                    <td>Ячейка 4-3</td>
+                    <td>Ячейка 4-4</td>
                 </tr>
-                <!-- Строка 5 -->
                 <tr>
-                    <td>Данные</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
+                    <td>Ячейка 5-1</td>
+                    <td>Ячейка 5-2</td>
+                    <td>Ячейка 5-3</td>
+                    <td>Ячейка 5-4</td>
                 </tr>
-                <!-- Строка 6 -->
                 <tr>
-                    <td>Данные</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
-                    <td>Данные</td>
+                    <td>Ячейка 6-1</td>
+                    <td>Ячейка 6-2</td>
+                    <td>Ячейка 6-3</td>
+                    <td>Ячейка 6-4</td>
                 </tr>
             </tbody>
         </table>
     </main>
 
-    <!-- Подвал сайта (Footer) -->
-    <footer>
-        <p>&copy; Данил Любарец</p>
+    <!-- Подвал (Footer) -->
+    <footer style="background-color: #87CEEB; padding: 15px; text-align: center; margin-top: 20px;">
+        &copy; Данил Любарец
     </footer>
 
 </body>
