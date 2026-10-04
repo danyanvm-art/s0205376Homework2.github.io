@@ -1,14 +1,68 @@
-/* Глобальные настройки */
+/* Базовые настройки страницы */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* Фиксированная ширина контента, чтобы на больших экранах не растягивалось бесконечно */
-    max-width: 1200px; 
-    margin: 0 auto; /* Центрирование всего сайта */
+    /* Убрали max-width и margin auto. Теперь контент может занимать всю ширину экрана */
 }
 
-/* Ссылки */
+/* --- Шапка --- */
+#main-header {
+    background-color: #87CEEB;
+    padding: 15px 0; /* Отступы сверху и снизу, слева и справа нет */
+}
+
+.header-inner {
+    width: 960px; /* Фиксированная ширина контейнера внутри шапки, как в старых сайтах */
+    margin: 0 auto; /* Центрируем этот блок, но сама шапка синяя на всю ширину */
+}
+
+.logo-box {
+    float: left; /* Старое доброе выравнивание */
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: #fff;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.site-name {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin-left: 15px;
+    vertical-align: middle;
+}
+
+.nav-box {
+    float: right; /* Меню справа */
+}
+
+.nav-link {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Контент --- */
+#content {
+    width: 960px; /* Фиксированная ширина контента, как в старых сайтах */
+    margin: 20px auto; /* Центрируем контент */
+    padding: 0 10px;
+}
+
+/* --- Ссылки и картинки --- */
 a {
     color: #0000EE;
     text-decoration: underline;
@@ -18,16 +72,19 @@ a:hover {
     color: #FF0000;
 }
 
-/* Имитация ссылки (просто текст, похожий на ссылку) */
+.img-link, .img-map {
+    border: 1px solid #ccc;
+}
+
 .fake-link {
     color: #0000EE;
     text-decoration: underline;
     cursor: pointer;
 }
 
-/* Таблица */
+/* --- Таблица --- */
 table {
-    width: 100%; /* Таблица всегда на всю ширину контейнера */
+    width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
 }
@@ -42,7 +99,7 @@ th {
     background-color: #f2f2f2;
 }
 
-/* Чередование цветов строк (как требовалось в задании) */
+/* Чередование цветов строк */
 tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
@@ -51,7 +108,7 @@ tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-/* Форма */
+/* --- Форма --- */
 form {
     background-color: #f9f9f9;
     padding: 20px;
@@ -62,20 +119,16 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="tel"],
-input[type="email"],
-input[type="date"],
-textarea,
-select {
+.form-input, .form-textarea {
     padding: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    width: 300px; /* Фиксированная ширина полей */
 }
 
-button {
+.submit-btn {
     padding: 10px 20px;
     background-color: #007BFF;
     color: white;
@@ -84,14 +137,15 @@ button {
     cursor: pointer;
 }
 
-button:hover {
+.submit-btn:hover {
     background-color: #0056b3;
 }
 
-/* Подвал */
-footer {
+/* --- Подвал --- */
+#main-footer {
     background-color: #87CEEB;
     padding: 15px;
     text-align: center;
     margin-top: 20px;
+    width: 100%; /* На всю ширину */
 }
