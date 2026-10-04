@@ -1,146 +1,135 @@
-/* style.css - Стили для Задания 2 */
-
-/* Общие настройки страницы */
+/* Цвет фона всей страницы */
 body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    min-width: 960px; /* Чтобы не сжималось меньше 960px (без адаптивности) */
 }
 
-/* --- КОНТЕЙНЕР --- */
-/* Это тот самый блок шириной 960px с центрированием */
-.container {
-    max-width: 960px;
-    margin: 0 auto; /* Центрирует блок */
-    padding: 0 15px;
-}
-
-/* --- HEADER (ШАПКА) --- */
+/* Шапка сайта */
 header {
-    background-color: #3498db; /* Синий цвет как на макете */
-    color: white;
-    padding: 20px 0;
-    width: 100%; /* Тянется на всю ширину окна */
+    background-color: #87CEEB; /* Светло-голубой цвет */
+    padding: 15px 20px;
+    border-bottom: 3px solid #0066cc;
 }
 
-header .container {
-    display: flex; /* Выстраивает лого, заголовок и меню в одну строку */
-    align-items: center; /* Выравнивание по вертикали по центру */
-    justify-content: space-between; /* Разносит лого+название влево, меню вправо */
+/* Логотип и название в шапке */
+.logo-and-title {
+    display: inline-block;
 }
 
-/* Логотип (круг) */
-.logo {
+.circle-logo {
     width: 50px;
     height: 50px;
-    background-color: white;
-    border-radius: 50%; /* Делает квадрат круглым */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #3498db;
-    margin-right: 15px;
-    flex-shrink: 0; /* Чтобы круг не сплющивался на маленьких экранах */
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-/* Название сайта */
-.site-title {
+.site-name {
     font-size: 24px;
     font-weight: bold;
+    color: #000;
+    margin-left: 15px;
+    vertical-align: middle;
 }
 
-/* --- NAV (МЕНЮ) --- */
+/* Меню навигации */
+nav {
+    float: right; /* Прижимаем меню вправо */
+    vertical-align: middle;
+}
+
 nav ul {
-    list-style: none; /* Убирает точки у списка */
+    list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Ссылки в ряд */
 }
 
-nav ul li {
+nav li {
+    display: inline; /* Делаем пункты меню в одну строку */
     margin-left: 20px;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none; /* Убирает подчеркивание */
+nav a {
+    text-decoration: none;
+    color: #000;
     font-weight: bold;
+    padding: 5px 10px;
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+nav a:hover {
+    background-color: #fff;
+    color: #0066cc;
 }
 
-/* --- MAIN CONTENT (ОСНОВНОЙ КОНТЕНТ) --- */
+/* Основной контент */
 main {
-    padding: 40px 0;
-    background-color: white;
+    max-width: 960px;
+    margin: 20px auto; /* Центрируем блок по горизонтали */
+    padding: 20px;
+    background-color: #ffffff;
+    min-height: 600px;
 }
 
-/* Секции для красоты (отступы между блоками) */
-section {
-    margin-bottom: 30px;
+/* Подвал сайта */
+footer {
+    background-color: #87CEEB;
+    padding: 20px;
+    text-align: center;
+    color: #000;
+    clear: both; /* Важно: сбрасывает обтекание от меню */
 }
 
-h2 {
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-/* --- ТАБЛИЦА --- */
+/* Таблица */
 table {
     width: 100%;
-    border-collapse: collapse; /* Убирает двойные границы */
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 th, td {
     border: 1px solid #ccc;
-    padding: 12px;
+    padding: 10px;
     text-align: left;
 }
 
-th {
-    background-color: #3498db;
-    color: white;
+/* Чередование цветов строк в таблице */
+tbody tr:nth-child(odd) {
+    background-color: #e0f7fa;
 }
 
-/* Чередование цветов строк (зебра) */
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-tr:nth-child(odd) {
+tbody tr:nth-child(even) {
     background-color: #ffffff;
 }
 
-/* --- ФОРМА --- */
-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-}
-
-form label {
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-form input, form select {
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* --- FOOTER (ПОДВАЛ) --- */
-footer {
-    background-color: #333;
+thead th {
+    background-color: #0066cc;
     color: white;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%; /* Тянется на всю ширину */
-    margin-top: 20px;
+}
+
+/* Имитация ссылки (просто текст, похожий на ссылку) */
+.fake-link {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Отступы для формы */
+form p {
+    margin: 10px 0;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+textarea,
+select {
+    padding: 5px;
+    border: 1px solid #ccc;
 }
