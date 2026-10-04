@@ -1,24 +1,36 @@
-/* Базовые настройки страницы */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    /* Убрали max-width и margin auto. Теперь контент может занимать всю ширину экрана */
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* --- Шапка --- */
+/* Контейнер для центрирования контента (960px) */
+.container {
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
 #main-header {
     background-color: #87CEEB;
-    padding: 15px 0; /* Отступы сверху и снизу, слева и справа нет */
+    padding: 15px 0;
+    width: 100%; /* Тянется на всю ширину экрана */
 }
 
-.header-inner {
-    width: 960px; /* Фиксированная ширина контейнера внутри шапки, как в старых сайтах */
-    margin: 0 auto; /* Центрируем этот блок, но сама шапка синяя на всю ширину */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Это разнесет элементы по краям */
+    align-items: center;            /* Это выровняет их по вертикали по центру */
 }
 
-.logo-box {
-    float: left; /* Старое доброе выравнивание */
+
+.logo-area {
+    display: flex;
+    align-items: center;
 }
 
 .logo-circle {
@@ -27,105 +39,102 @@ body {
     border: 2px solid #000;
     border-radius: 50%;
     background: #fff;
-    display: inline-block;
-    vertical-align: middle;
+    margin-right: 15px;
 }
 
 .site-name {
     font-size: 24px;
     font-weight: bold;
     color: #000;
-    margin-left: 15px;
-    vertical-align: middle;
 }
 
-.nav-box {
-    float: right; /* Меню справа */
+
+#main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 
-.nav-link {
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
+#main-nav li {
     margin-left: 20px;
-    font-size: 16px;
 }
 
-.nav-link:hover {
+#main-nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+#main-nav a:hover {
     text-decoration: underline;
 }
 
-/* --- Контент --- */
-#content {
-    width: 960px; /* Фиксированная ширина контента, как в старых сайтах */
-    margin: 20px auto; /* Центрируем контент */
-    padding: 0 10px;
-}
 
-/* --- Ссылки и картинки --- */
-a {
-    color: #0000EE;
-    text-decoration: underline;
-}
-
-a:hover {
-    color: #FF0000;
-}
-
-.img-link, .img-map {
-    border: 1px solid #ccc;
-}
-
-.fake-link {
-    color: #0000EE;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-/* --- Таблица --- */
-table {
-    width: 100%;
-    border-collapse: collapse;
+.content-wrapper {
+    background-color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-th, td {
-    border: 1px solid #000;
-    padding: 8px;
+/* Общие стили для блоков контента */
+.block-links, .block-table, .block-form {
+    margin-bottom: 30px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.block-links ul {
+    list-style-type: decimal;
+    padding-left: 20px;
+}
+
+.block-links a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.block-links a:hover {
+    text-decoration: underline;
+}
+
+.fake-link {
+    color: #0066cc;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+
+.block-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.block-table th, .block-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
     text-align: left;
 }
 
-th {
+.block-table th {
     background-color: #f2f2f2;
 }
 
-/* Чередование цветов строк */
-tbody tr:nth-child(odd) {
+/* Чередование цветов строк (Требование задания) */
+.block-table tbody tr:nth-child(odd) {
     background-color: #ffffff;
 }
 
-tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-/* --- Форма --- */
-form {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border: 1px solid #ccc;
-}
-
-label {
-    font-weight: bold;
+.block-table tbody tr:nth-child(even) {
+    background-color: #eef7ff;
 }
 
 .form-input, .form-textarea {
+    width: 300px;
     padding: 8px;
-    margin-top: 5px;
-    margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 300px; /* Фиксированная ширина полей */
 }
 
 .submit-btn {
@@ -137,15 +146,14 @@ label {
     cursor: pointer;
 }
 
-.submit-btn:hover {
-    background-color: #0056b3;
-}
 
-/* --- Подвал --- */
 #main-footer {
     background-color: #87CEEB;
-    padding: 15px;
+    padding: 15px 0;
+    width: 100%; /* Тянется на всю ширину экрана */
     text-align: center;
-    margin-top: 20px;
-    width: 100%; /* На всю ширину */
+}
+
+#main-footer .container {
+    padding: 0 15px;
 }
