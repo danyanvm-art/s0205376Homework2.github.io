@@ -2,130 +2,230 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Задание 2: Web-интерфейс</title>
-    <!-- ПОДКЛЮЧЕНИЕ СТИЛЕЙ -->
-    <!-- Эта строка говорит браузеру взять стили из файла style.css -->
+    <title>Задание 2: Макет сайта</title>
+    <!-- Подключение внешнего CSS файла -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- HEADER: Шапка на всю ширину -->
+    <!-- Шапка сайта (Header) -->
     <header>
-        <div class="container">
-            <!-- Левая часть: Лого и Название -->
-            <div style="display: flex; align-items: center;">
-                <div class="logo">Л</div> <!-- Буква внутри круга -->
-                <div class="site-title">Название сайта</div>
-            </div>
-
-            <!-- Правая часть: Меню (NAV) -->
-            <nav>
-                <ul>
-                    <li><a href="#">Ссылка меню 1</a></li>
-                    <li><a href="#">Ссылка 2</a></li>
-                    <li><a href="#">Ссылка 3</a></li>
-                </ul>
-            </nav>
+        <div class="logo-container">
+            <div class="logo-circle"></div>
+            <span class="site-title">Название сайта</span>
         </div>
+        
+        <!-- Меню навигации (Nav) -->
+        <nav>
+            <ul>
+                <li><a href="#">Ссылка меню 1</a></li>
+                <li><a href="#">Ссылка меню 2</a></li>
+                <li><a href="#">Ссылка меню 3</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- MAIN: Основной контент (ограничен 960px) -->
-    <main class="container">
-        
-        <!-- 1. Список гиперссылок -->
-        <section>
-            <h2>Список гиперссылок</h2>
-            <ul>
-                <li><a href="#">Ссылка на документацию</a></li>
-                <li><a href="#">Ссылка на профиль</a></li>
-                <li><a href="#">Ссылка на контакты</a></li>
-                <li><a href="#">Ссылка на галерею</a></li>
-            </ul>
-        </section>
+    <!-- Основной контент (Main) -->
+    <main>
+        <h1>Список ссылок (база)</h1>
+        <ul>
+            <li><a href="http://kubsu.ru/">1) Ссылка на kubsu.ru (http)</a></li>
+            <li><a href="https://kubsu.ru/">2) Ссылка на kubsu.ru (https)</a></li>
 
-        <!-- 2. Таблица (4 колонки, 6 строк, объединенные ячейки) -->
-        <section>
-            <h2>Таблица</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Колонка 1</th>
-                        <th>Колонка 2</th>
-                        <th>Колонка 3</th>
-                        <th>Колонка 4</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Данные 1.1</td>
-                        <td>Данные 1.2</td>
-                        <td>Данные 1.3</td>
-                        <td>Данные 1.4</td>
-                    </tr>
-                    <tr>
-                        <td>Данные 2.1</td>
-                        <td>Данные 2.2</td>
-                        <td>Данные 2.3</td>
-                        <td>Данные 2.4</td>
-                    </tr>
-                    <tr>
-                        <td>Данные 3.1</td>
-                        <td>Данные 3.2</td>
-                        <td>Данные 3.3</td>
-                        <td>Данные 3.4</td>
-                    </tr>
-                    <tr>
-                        <td>Данные 4.1</td>
-                        <td>Данные 4.2</td>
-                        <td>Данные 4.3</td>
-                        <td>Данные 4.4</td>
-                    </tr>
-                    <tr>
-                        <td>Данные 5.1</td>
-                        <td>Данные 5.2</td>
-                        <td>Данные 5.3</td>
-                        <td>Данные 5.4</td>
-                    </tr>
-                    <!-- 6-я строка с объединенной ячейкой (colspan="2") -->
-                    <tr>
-                        <td>Данные 6.1</td>
-                        <td>Данные 6.2</td>
-                        <td colspan="2" style="text-align: center; font-weight: bold; background-color: #e0e0e0;">
-                            Объединенная ячейка (занимает 2 колонки)
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+            <li>
+                3) Ссылка-картинка:
+                <br>
+                <!-- Если у вас нет файла photohtml2.jpg, замените src на заглушку или удалите этот блок -->
+                <a href="https://kubsu.ru/">
+                    <img src="photohtml2.jpg" alt="Лого" width="50" height="50">
+                </a>
+            </li>
 
-        <!-- 3. Форма -->
-        <section>
-            <h2>Форма</h2>
-            <form action="#" method="POST">
-                <label for="name">Ваше имя:</label>
-                <input type="text" id="name" name="name" placeholder="Введите имя" required>
+            <li><a href="about.html">4) Ссылка на внутреннюю страницу (about.html)</a></li>
+            <li><a href="fff.html">5) Ссылка на главную (index.html)</a></li>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="example@mail.ru" required>
+            <li><a href="#contacts">6) Ссылка на блок "Контакты" на этой странице</a></li>
+            <li>
+                7) Ссылка с тремя параметрами в URL:
+                <br>
+                <a href="result.html?name=Ivan&age=20&city=Krasnodar" target="_blank">Ссылка с тремя параметрами</a>
+            </li>
+            <li>
+                8) Ссылка с параметром id в URL:
+                <br>
+                <a href="result.html?id=12345" target="_blank">Ссылка с параметром id</a>
+            </li>
 
-                <label for="role">Роль:</label>
-                <select id="role" name="role">
-                    <option value="user">Пользователь</option>
-                    <option value="admin">Администратор</option>
-                    <option value="guest">Гость</option>
-                </select>
+            <li><a href="contacts.html">9) Ссылка на файл в текущей папке</a></li>
+            <li><a href="about/info.html">10) Ссылка в папке about</a></li>
+            <li><a href="../page.html">11) Ссылка уровнем выше (заглушка)</a></li>
+            <li><a href="../../pagemain.html">12) Ссылка двумя уровнями выше (заглушка)</a></li>
 
-                <button type="submit" style="margin-top: 15px; padding: 10px 20px; background-color: #3498db; color: white; border: none; cursor: pointer;">Отправить</button>
-            </form>
-        </section>
+            <li>
+                13) Контекстная ссылка:
+                <p>Зайдите на <a href="https://kubsu.ru/">сайт университета</a>, чтобы узнать расписание.</p>
+            </li>
+            <li>
+                14) Ссылка на фрагмент страницы стороннего сайта:
+                <br>
+                <a href="https://en.wikipedia.org/wiki/Key_Glock#:~:text=known%20professionally%20as%20Key%20Glock%2C%20is%20an%20American%20rapper" target="_blank">
+                    Перейти к фрагменту о Key Glock 
+                </a>
+            </li>
+            <li>
+                15) Ссылки из прямоугольных и круглых областей картинки (HTML-тег map):
+                <br>
+                <!-- Если у вас нет файла photohtml1.jpg, картинка не отобразится, но код валиден -->
+                <img src="photohtml1.jpg" usemap="#image-map" alt="Карта ссылок" width="400" height="200">
+                
+                <map name="image-map">
+                    <area shape="rect" coords="0,0,200,200" href="https://kubsu.ru" target="_blank" alt="Прямоугольник">
+                    <area shape="circle" coords="300,100,60" href="https://yandex.ru" target="_blank" alt="Круг">
+                </map>
+            </li>
+            <li><a href="" onclick="return false;">16) Пустая ссылка</a></li>
+            <li>17) Имитация ссылки (просто текст): <span style="color: blue; text-decoration: underline;">Нажмите сюда</span></li>
 
+            <li><a href="https://kubsu.ru/" rel="nofollow">18) Ссылка с запретом для поисковиков</a></li>
+            <li>
+                19. Страница с запретом индексации поисковиками:
+                <br>
+                <a href="result.html">Перейти на страницу с параметрами (noindex)</a>
+            </li>
+            <li>
+                20) Нумерованный список:
+                <ol>
+                    <li><a href="https://kubsu.ru/" title="Главная КубГУ">КубГУ</a></li>
+                    <li><a href="https://google.com/" title="Поиск">Google</a></li>
+                </ol>
+            </li>
+            <li>
+                21) Ссылка на файл на сервере FTP с авторизацией:
+                <br>
+                <a href="ftp://login:password@ftp.example.com/file.txt" target="_blank">Скачать файл с FTP-сервера (с авторизацией)</a>
+            </li>
+        </ul>
+
+        <h2 id="contacts">Контакты</h2>
+        <p>Здесь находится информация для связи.</p>
+        <hr>
+
+        <h2>Форма (база)</h2>
+        <form action="/save" method="post">
+            
+            <p>
+                <label>1) ФИО: </label>
+                <input type="text" name="fio" placeholder="Иванов И.И.">
+            </p>
+
+            <p>
+                <label>2) Телефон: </label>
+                <input type="tel" name="phone" placeholder="+7 (999) 000-00-00">
+            </p>
+
+            <p>
+                <label>3) E-mail: </label>
+                <input type="email" name="email" placeholder="name@mail.ru">
+            </p>
+
+            <p>
+                <label>4) Дата рождения: </label>
+                <input type="date" name="birth">
+            </p>
+
+            <p>
+                5) Пол:
+                <br>
+                <input type="radio" name="gender" value="male" checked> Мужской
+                <input type="radio" name="gender" value="female"> Женский
+            </p>
+
+            <p>
+                6) Любимые языки программирования (выберите несколько):<br>
+                <input type="checkbox" name="lang" value="pascal"> Pascal &nbsp;&nbsp;
+                <input type="checkbox" name="lang" value="c"> C &nbsp;&nbsp;
+                <input type="checkbox" name="lang" value="cpp"> C++ &nbsp;&nbsp;
+                <input type="checkbox" name="lang" value="python"> Python &nbsp;&nbsp;
+                <input type="checkbox" name="lang" value="java"> Java &nbsp;&nbsp;
+                <input type="checkbox" name="lang" value="js"> JavaScript
+            </p>
+
+
+
+            <p>
+                <label>7) Биография: </label>
+                <br>
+                <textarea name="bio" rows="4" cols="30" placeholder="О себе..."></textarea>
+            </p>
+
+            <p>
+                <input type="checkbox" name="agree">
+                8) С контрактом ознакомлен(а)
+            </p>
+
+            <p>
+                <button type="submit">9) Сохранить</button>
+            </p>
+        </form>
+
+        <!-- ТАБЛИЦА (Новое требование) -->
+        <h2>Таблица данных</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Колонка 1</th>
+                    <th>Колонка 2</th>
+                    <th>Колонка 3</th>
+                    <th>Колонка 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Строка 1: объединенные ячейки -->
+                <tr>
+                    <td colspan="2">Объединенная ячейка (строка 1)</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                </tr>
+                <!-- Строка 2 -->
+                <tr>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                </tr>
+                <!-- Строка 3: объединенные ячейки -->
+                <tr>
+                    <td colspan="3">Объединенная ячейка (строка 3)</td>
+                    <td>Данные</td>
+                </tr>
+                <!-- Строка 4 -->
+                <tr>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                </tr>
+                <!-- Строка 5 -->
+                <tr>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                </tr>
+                <!-- Строка 6 -->
+                <tr>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                    <td>Данные</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
-    <!-- FOOTER: Подвал на всю ширину -->
+    <!-- Подвал сайта (Footer) -->
     <footer>
-        <div class="container">
-            <p>&copy; Сергей Синица</p>
-        </div>
+        <p>&copy; Данил Любарец</p>
     </footer>
 
 </body>
